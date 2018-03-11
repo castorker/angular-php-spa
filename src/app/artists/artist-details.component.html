@@ -1,0 +1,11 @@
+<img src="assets/images/{{ artist.id }}.jpg">
+{{ artist.name }}
+<span [hidden]="artist.artworks.length === 0" (click)="toggleArtworks()">
+  ({{ artist.artworks.length }} artworks)
+</span>
+<ul [hidden]="!_artworksVisible">
+  <li *ngFor="let artwork of artist.artworks">
+      <img src="assets/images/{{ artwork.id }}.jpg">
+    {{ artwork.title }}
+  </li>
+</ul>
